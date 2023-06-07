@@ -17,6 +17,18 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
+        <script>
+            function Comprobar(obj){
+                if ( !obj.Opciones[0].checked &&
+                    !obj.Opciones[1].checked &&
+                    !obj.Opciones[2].checked)
+                {
+                    alert("Debe elegir una opción")
+                        return false;
+                }
+                return true
+            }
+        </script>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
@@ -300,10 +312,17 @@
                                             Si
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
+                                    <button class="formu btn btn-primary btn-xl text-uppercase" onclick="mostrarFormulario()">Me interesa!</button>
+                                    <form id="miFormulario" style="display: none;" method="POST" onsubmit="return Comprobar(this)" action= "mailto:tlecuenis@pioix.edu.ar" enctype ="text/plain" >
+                                        <!-- Aquí va el contenido del formulario -->
+                                        <input class="item_formu" type="text" name="nombre" placeholder="Nombre">
+                                        <input class="item_formu" type="email" name="email" placeholder="Correo electrónico">
+                                        <textarea class="formu_msg" name="" id="" cols="42" rows="4">Hola! ¿Cody sigue disponible?</textarea>
+                                        <br>
+                                        <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
+                                    </form>
+                                    <form >
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -335,10 +354,15 @@
                                             Graphic Design
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
+                                    <button class="formu btn btn-primary btn-xl text-uppercase" onclick="mostrarFormulario()">Me interesa!</button>
+                                    <form id="miFormulario" style="display: none;">
+                                        <!-- Aquí va el contenido del formulario -->
+                                        <input class="item_formu" type="text" name="nombre" placeholder="Nombre">
+                                        <input class="item_formu" type="email" name="email" placeholder="Correo electrónico">
+                                        <textarea class="formu_msg" name="" id="" cols="42" rows="4">Hola! ¿Cody sigue disponible?</textarea>
+                                        <br>
+                                        <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -370,10 +394,15 @@
                                             Identity
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
+                                    <button class="formu btn btn-primary btn-xl text-uppercase" onclick="mostrarFormulario()">Me interesa!</button>
+                                    <form id="miFormulario" style="display: none;">
+                                        <!-- Aquí va el contenido del formulario -->
+                                        <input class="item_formu" type="text" name="nombre" placeholder="Nombre">
+                                        <input class="item_formu" type="email" name="email" placeholder="Correo electrónico">
+                                        <textarea class="formu_msg" name="" id="" cols="42" rows="4">Hola! ¿Cody sigue disponible?</textarea>
+                                        <br>
+                                        <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -405,10 +434,15 @@
                                             Branding
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
+                                    <button class="formu btn btn-primary btn-xl text-uppercase" onclick="mostrarFormulario()">Me interesa!</button>
+                                    <form id="miFormulario" style="display: none;">
+                                        <!-- Aquí va el contenido del formulario -->
+                                        <input class="item_formu" type="text" name="nombre" placeholder="Nombre">
+                                        <input class="item_formu" type="email" name="email" placeholder="Correo electrónico">
+                                        <textarea class="formu_msg" name="" id="" cols="42" rows="4">Hola! ¿Cody sigue disponible?</textarea>
+                                        <br>
+                                        <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -440,10 +474,15 @@
                                             Website Design
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
+                                        <button class="formu btn btn-primary btn-xl text-uppercase" onclick="mostrarFormulario()">Me interesa!</button>
+                                        <form id="miFormulario" style="display: none;">
+                                        <!-- Aquí va el contenido del formulario -->
+                                        <input class="item_formu" type="text" name="nombre" placeholder="Nombre">
+                                        <input class="item_formu" type="email" name="email" placeholder="Correo electrónico">
+                                        <textarea class="formu_msg" name="" id="" cols="42" rows="4">Hola! ¿Cody sigue disponible?</textarea>
+                                        <br>
+                                        <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -475,10 +514,15 @@
                                             Photography
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
+                                    <button class="formu btn btn-primary btn-xl text-uppercase" onclick="mostrarFormulario()">Me interesa!</button>
+                                    <form id="miFormulario" style="display: none;">
+                                        <!-- Aquí va el contenido del formulario -->
+                                        <input class="item_formu" type="text" name="nombre" placeholder="Nombre">
+                                        <input class="item_formu" type="email" name="email" placeholder="Correo electrónico">
+                                        <textarea class="formu_msg" name="" id="" cols="42" rows="4">Hola! ¿Cody sigue disponible?</textarea>
+                                        <br>
+                                        <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
