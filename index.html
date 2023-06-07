@@ -20,11 +20,13 @@
               event.preventDefault(); // Evitar el envío del formulario por defecto
               var nombre = document.getElementById("miFormulario").Nombre.value;
               var mensaje = document.getElementById("miFormulario").Mensaje.value;
+              var zona = document.getElementById("miFormulario").Zona.value;
               // Codificar los caracteres especiales en la URL
               var nombreCodificado = encodeURIComponent(nombre);
               var mensajeCodificado = encodeURIComponent(mensaje);
+              var zonaCodificado = encodeURIComponent(zona);
               // Construir la URL del enlace de WhatsApp
-              var urlWhatsApp = "https://wa.me/+5491150500250?text=" + nombreCodificado + "%20-%20" + mensajeCodificado;
+              var urlWhatsApp = "https://wa.me/+5491150500250?text=" + "%20Hola!%20soy%20" + nombreCodificado + "%20de%20" + zonaCodificado + "%20" + mensajeCodificado;
               // Abrir la ventana de WhatsApp en una nueva pestaña
               window.open(urlWhatsApp, "_blank");
             }
@@ -318,8 +320,8 @@
                                     <form id="miFormulario" method="POST" onsubmit="enviarMensajeWhatsApp(event)">
                                         <!-- Aquí va el contenido del formulario -->
                                         <input class="item_formu" type="text" name="Nombre" placeholder="Nombre">
-                                        <input class="item_formu" type="email" name="Email" placeholder="Correo electrónico">
-                                        <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">Hola! Cody sigue disponible?</textarea>
+                                        <input class="item_formu" type="zona" name="Zona" placeholder="Barrio">
+                                        <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">¿Cody sigue disponible?</textarea>
                                         <br>
                                         <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
                                     </form>
@@ -358,8 +360,8 @@
                                     <form id="miFormulario" method="POST" onsubmit="enviarMensajeWhatsApp(event)">
                                         <!-- Aquí va el contenido del formulario -->
                                         <input class="item_formu" type="text" name="Nombre" placeholder="Nombre">
-                                        <input class="item_formu" type="email" name="Email" placeholder="Correo electrónico">
-                                        <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">Hola! Cody sigue disponible?</textarea>
+                                        <input class="item_formu" type="zona" name="Zona" placeholder="Barrio">
+                                        <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">¿Cody sigue disponible?</textarea>
                                         <br>
                                         <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
                                     </form>
@@ -398,8 +400,8 @@
                                     <form id="miFormulario" method="POST" onsubmit="enviarMensajeWhatsApp(event)">
                                         <!-- Aquí va el contenido del formulario -->
                                         <input class="item_formu" type="text" name="Nombre" placeholder="Nombre">
-                                        <input class="item_formu" type="email" name="Email" placeholder="Correo electrónico">
-                                        <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">Hola! Cody sigue disponible?</textarea>
+                                        <input class="item_formu" type="zona" name="Zona" placeholder="Barrio">
+                                        <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">¿Cody sigue disponible?</textarea>
                                         <br>
                                         <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
                                     </form>
@@ -438,8 +440,8 @@
                                     <form id="miFormulario" method="POST" onsubmit="enviarMensajeWhatsApp(event)">
                                         <!-- Aquí va el contenido del formulario -->
                                         <input class="item_formu" type="text" name="Nombre" placeholder="Nombre">
-                                        <input class="item_formu" type="email" name="Email" placeholder="Correo electrónico">
-                                        <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">Hola! Cody sigue disponible?</textarea>
+                                        <input class="item_formu" type="zona" name="Zona" placeholder="Barrio">
+                                        <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">¿Cody sigue disponible?</textarea>
                                         <br>
                                         <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
                                     </form>
@@ -478,8 +480,8 @@
                                         <form id="miFormulario" method="POST" onsubmit="enviarMensajeWhatsApp(event)">
                                             <!-- Aquí va el contenido del formulario -->
                                             <input class="item_formu" type="text" name="Nombre" placeholder="Nombre">
-                                            <input class="item_formu" type="email" name="Email" placeholder="Correo electrónico">
-                                            <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">Hola! Cody sigue disponible?</textarea>
+                                            <input class="item_formu" type="zona" name="Zona" placeholder="Barrio">
+                                            <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">¿Cody sigue disponible?</textarea>
                                             <br>
                                             <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
                                         </form>
@@ -518,8 +520,8 @@
                                         <form id="miFormulario" method="POST" onsubmit="enviarMensajeWhatsApp(event)">
                                             <!-- Aquí va el contenido del formulario -->
                                             <input class="item_formu" type="text" name="Nombre" placeholder="Nombre">
-                                            <input class="item_formu" type="email" name="Email" placeholder="Correo electrónico">
-                                            <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">Hola! Cody sigue disponible?</textarea>
+                                            <input class="item_formu" type="zona" name="Zona" placeholder="Barrio">
+                                            <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">¿Cody sigue disponible?</textarea>
                                             <br>
                                             <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
                                         </form>
