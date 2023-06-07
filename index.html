@@ -15,20 +15,22 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script>
+            function enviarMensajeWhatsApp(event) {
+              event.preventDefault(); // Evitar el envío del formulario por defecto
+              var nombre = document.getElementById("miFormulario").Nombre.value;
+              var mensaje = document.getElementById("miFormulario").Mensaje.value;
+              // Codificar los caracteres especiales en la URL
+              var nombreCodificado = encodeURIComponent(nombre);
+              var mensajeCodificado = encodeURIComponent(mensaje);
+              // Construir la URL del enlace de WhatsApp
+              var urlWhatsApp = "https://wa.me/+5491150500250?text=" + nombreCodificado + "%20-%20" + mensajeCodificado;
+              // Abrir la ventana de WhatsApp en una nueva pestaña
+              window.open(urlWhatsApp, "_blank");
+            }
+            </script>
     </head>
     <body id="page-top">
-        <script>
-            function Comprobar(obj){
-                if ( !obj.Opciones[0].checked &&
-                    !obj.Opciones[1].checked &&
-                    !obj.Opciones[2].checked)
-                {
-                    alert("Debe elegir una opción")
-                        return false;
-                }
-                return true
-            }
-        </script>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
@@ -313,15 +315,13 @@
                                         </li>
                                     </ul>
                                     <button class="formu btn btn-primary btn-xl text-uppercase" onclick="mostrarFormulario()">Me interesa!</button>
-                                    <form id="miFormulario" style="display: none;" method="POST" onsubmit="return Comprobar(this)" action= "mailto:tlecuenis@pioix.edu.ar" enctype ="text/plain" >
+                                    <form id="miFormulario" method="POST" onsubmit="enviarMensajeWhatsApp(event)">
                                         <!-- Aquí va el contenido del formulario -->
-                                        <input class="item_formu" type="text" name="nombre" placeholder="Nombre">
-                                        <input class="item_formu" type="email" name="email" placeholder="Correo electrónico">
-                                        <textarea class="formu_msg" name="" id="" cols="42" rows="4">Hola! ¿Cody sigue disponible?</textarea>
+                                        <input class="item_formu" type="text" name="Nombre" placeholder="Nombre">
+                                        <input class="item_formu" type="email" name="Email" placeholder="Correo electrónico">
+                                        <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">Hola! Cody sigue disponible?</textarea>
                                         <br>
                                         <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
-                                    </form>
-                                    <form >
                                     </form>
                                 </div>
                             </div>
@@ -355,11 +355,11 @@
                                         </li>
                                     </ul>
                                     <button class="formu btn btn-primary btn-xl text-uppercase" onclick="mostrarFormulario()">Me interesa!</button>
-                                    <form id="miFormulario" style="display: none;">
+                                    <form id="miFormulario" method="POST" onsubmit="enviarMensajeWhatsApp(event)">
                                         <!-- Aquí va el contenido del formulario -->
-                                        <input class="item_formu" type="text" name="nombre" placeholder="Nombre">
-                                        <input class="item_formu" type="email" name="email" placeholder="Correo electrónico">
-                                        <textarea class="formu_msg" name="" id="" cols="42" rows="4">Hola! ¿Cody sigue disponible?</textarea>
+                                        <input class="item_formu" type="text" name="Nombre" placeholder="Nombre">
+                                        <input class="item_formu" type="email" name="Email" placeholder="Correo electrónico">
+                                        <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">Hola! Cody sigue disponible?</textarea>
                                         <br>
                                         <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
                                     </form>
@@ -395,11 +395,11 @@
                                         </li>
                                     </ul>
                                     <button class="formu btn btn-primary btn-xl text-uppercase" onclick="mostrarFormulario()">Me interesa!</button>
-                                    <form id="miFormulario" style="display: none;">
+                                    <form id="miFormulario" method="POST" onsubmit="enviarMensajeWhatsApp(event)">
                                         <!-- Aquí va el contenido del formulario -->
-                                        <input class="item_formu" type="text" name="nombre" placeholder="Nombre">
-                                        <input class="item_formu" type="email" name="email" placeholder="Correo electrónico">
-                                        <textarea class="formu_msg" name="" id="" cols="42" rows="4">Hola! ¿Cody sigue disponible?</textarea>
+                                        <input class="item_formu" type="text" name="Nombre" placeholder="Nombre">
+                                        <input class="item_formu" type="email" name="Email" placeholder="Correo electrónico">
+                                        <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">Hola! Cody sigue disponible?</textarea>
                                         <br>
                                         <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
                                     </form>
@@ -435,11 +435,11 @@
                                         </li>
                                     </ul>
                                     <button class="formu btn btn-primary btn-xl text-uppercase" onclick="mostrarFormulario()">Me interesa!</button>
-                                    <form id="miFormulario" style="display: none;">
+                                    <form id="miFormulario" method="POST" onsubmit="enviarMensajeWhatsApp(event)">
                                         <!-- Aquí va el contenido del formulario -->
-                                        <input class="item_formu" type="text" name="nombre" placeholder="Nombre">
-                                        <input class="item_formu" type="email" name="email" placeholder="Correo electrónico">
-                                        <textarea class="formu_msg" name="" id="" cols="42" rows="4">Hola! ¿Cody sigue disponible?</textarea>
+                                        <input class="item_formu" type="text" name="Nombre" placeholder="Nombre">
+                                        <input class="item_formu" type="email" name="Email" placeholder="Correo electrónico">
+                                        <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">Hola! Cody sigue disponible?</textarea>
                                         <br>
                                         <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
                                     </form>
@@ -475,14 +475,14 @@
                                         </li>
                                     </ul>
                                         <button class="formu btn btn-primary btn-xl text-uppercase" onclick="mostrarFormulario()">Me interesa!</button>
-                                        <form id="miFormulario" style="display: none;">
-                                        <!-- Aquí va el contenido del formulario -->
-                                        <input class="item_formu" type="text" name="nombre" placeholder="Nombre">
-                                        <input class="item_formu" type="email" name="email" placeholder="Correo electrónico">
-                                        <textarea class="formu_msg" name="" id="" cols="42" rows="4">Hola! ¿Cody sigue disponible?</textarea>
-                                        <br>
-                                        <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
-                                    </form>
+                                        <form id="miFormulario" method="POST" onsubmit="enviarMensajeWhatsApp(event)">
+                                            <!-- Aquí va el contenido del formulario -->
+                                            <input class="item_formu" type="text" name="Nombre" placeholder="Nombre">
+                                            <input class="item_formu" type="email" name="Email" placeholder="Correo electrónico">
+                                            <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">Hola! Cody sigue disponible?</textarea>
+                                            <br>
+                                            <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
+                                        </form>
                                 </div>
                             </div>
                         </div>
@@ -514,15 +514,15 @@
                                             Photography
                                         </li>
                                     </ul>
-                                    <button class="formu btn btn-primary btn-xl text-uppercase" onclick="mostrarFormulario()">Me interesa!</button>
-                                    <form id="miFormulario" style="display: none;">
-                                        <!-- Aquí va el contenido del formulario -->
-                                        <input class="item_formu" type="text" name="nombre" placeholder="Nombre">
-                                        <input class="item_formu" type="email" name="email" placeholder="Correo electrónico">
-                                        <textarea class="formu_msg" name="" id="" cols="42" rows="4">Hola! ¿Cody sigue disponible?</textarea>
-                                        <br>
-                                        <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
-                                    </form>
+                                        <button class="formu btn btn-primary btn-xl text-uppercase" onclick="mostrarFormulario()">Me interesa!</button>
+                                        <form id="miFormulario" method="POST" onsubmit="enviarMensajeWhatsApp(event)">
+                                            <!-- Aquí va el contenido del formulario -->
+                                            <input class="item_formu" type="text" name="Nombre" placeholder="Nombre">
+                                            <input class="item_formu" type="email" name="Email" placeholder="Correo electrónico">
+                                            <textarea class="formu_msg" name="Mensaje" placeholder="Mensaje" cols="42" rows="4">Hola! Cody sigue disponible?</textarea>
+                                            <br>
+                                            <button class="btn2 send_boton btn-primary" type="submit">Enviar</button>
+                                        </form>
                                 </div>
                             </div>
                         </div>
