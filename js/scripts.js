@@ -7,13 +7,6 @@
 // Scripts
 // 
 
-
-
-function mostrarFormulario() {
-    var formulario = document.getElementById("miFormulario");
-    formulario.style.display = "block";
-  }
-
   
 window.addEventListener('DOMContentLoaded', event => {
 
