@@ -16,6 +16,57 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <script>
+
+function enviarMensajeWhatsApp2(event) {
+  event.preventDefault(); // Evitar que se envíe el formulario de manera convencional
+
+  // Obtener los valores de los campos del formulario
+  var nombre = document.querySelector('#contactForm input[name="Nombre"]').value;
+  var zona = document.querySelector('#contactForm input[name="Zona"]').value;
+  var edad = document.querySelector('#contactForm input[name="Edad"]').value;
+  var mensaje = document.querySelector('#contactForm textarea[name="Mensaje"]').value;
+
+  // Verificar si todos los campos están rellenados
+  if (nombre !== '' && zona !== '' && edad !== '' && mensaje !== '') {
+    // Construir el enlace de WhatsApp con los datos del formulario
+    var url = 'https://wa.me/+5491150500250?text=' + encodeURIComponent('Hola, soy ' + nombre + ' de ' + zona + ', tengo ' + edad + ' años. Mi mensaje es: ' + mensaje);
+
+    // Abrir el enlace en una nueva ventana o pestaña
+    window.open(url);
+
+    // Mostrar el mensaje de éxito
+    var successMessage = document.getElementById('submitSuccessMessage');
+    successMessage.classList.remove('d-none');
+  } else {
+    // Mostrar el mensaje de "Rellenar los formularios"
+    var errorMessage = document.getElementById('submitErrorMessage');
+    errorMessage.classList.remove('d-none');
+  }
+}
+
+// Habilitar o deshabilitar el botón de enviar mensaje al modificar los campos del formulario
+document.getElementById('contactForm').addEventListener('input', function() {
+  var nombre = document.querySelector('#contactForm input[name="Nombre"]').value;
+  var zona = document.querySelector('#contactForm input[name="Zona"]').value;
+  var edad = document.querySelector('#contactForm input[name="Edad"]').value;
+  var mensaje = document.querySelector('#contactForm textarea[name="Mensaje"]').value;
+  var submitButton = document.querySelector('#contactForm button[name="submit"]');
+
+  // Habilitar o deshabilitar el botón de enviar mensaje según el estado del formulario
+  if (nombre !== '' && zona !== '' && edad !== '' && mensaje !== '') {
+    submitButton.classList.remove('disabled');
+  } else {
+    submitButton.classList.add('disabled');
+  }
+});
+
+
+
+
+
+
+
+
               function mostrarOcultarFormulario(formularioId) {
                 var formulario = document.getElementById(formularioId);
                 if (formulario.style.display === "block") {
@@ -24,6 +75,7 @@
                     formulario.style.display = "block";
                 }
                 }
+
 
             function enviarMensajeWhatsApp(event, formularioId) {
               event.preventDefault(); // Evitar el envío del formulario por defecto
@@ -222,43 +274,33 @@
                     <h2 class="section-heading text-uppercase">Contactanos</h2>
                     <h3 class="section-subheading text-muted">Para ponerte en contacto con nosotros rellena este formulario:</h3>
                 </div>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+                <form id="contactForm" method="POST" onsubmit="enviarMensajeWhatsApp2(event)">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="Nombre *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">Nombre requerido.</div>
+                                <input class="form-control" name="Nombre" type="text" placeholder="Nombre"/>
                             </div>
                             <div class="form-group">
-                                <!-- Email address input-->
-                                <input class="form-control" id="email" type="email" placeholder="Email *" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="email:required">Email requerido.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email no valido.</div>
+                                <input class="form-control" name="Zona" type="zona" placeholder="Barrio"/>
                             </div>
-                            <div class="form-group mb-md-0">
-                                <!-- Phone number input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="Número de teléfono *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">Teléfono requerido.</div>
+                            <div class="form-group">
+                                <input class="form-control" name="Edad" type="edad" placeholder="Edad"/>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
-                                <!-- Message input-->
-                                <textarea class="form-control" id="message" placeholder="Mensaje *" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">Introduzca el mensaje.</div>
+                                <textarea class="form-control" name="Mensaje" placeholder="Mensaje"></textarea>
                             </div>
                         </div>
                     </div>
                     <!-- Submit success message-->
                     <!---->
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-white mb-3">
+                            <div class="fw-bolder redddd">Rellenar todos los campos!</div>
+                        </div>
+                    </div>
                     <!-- This is what your users will see when the form-->
                     <!-- has successfully submitted-->
                     <div class="d-none" id="submitSuccessMessage">
@@ -266,13 +308,8 @@
                             <div class="fw-bolder">Formulario enviado con éxito!</div>
                         </div>
                     </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error enviando el mensaje!</div></div>
                     <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Enviar mensaje</button></div>
+                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" name="submit" type="submit">Enviar mensaje</button></div>
                 </form>
             </div>
         </section>
@@ -280,15 +317,12 @@
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; 2023</div>
                     <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                        <a class="link-dark text-decoration-none" href="#!">Términos de Uso</a>
                     </div>
                 </div>
             </div>
