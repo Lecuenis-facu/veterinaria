@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Veterinaria San Miguel</title>
+        <title>Veterinaria San Andrés</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -92,6 +92,9 @@ document.getElementById('contactForm').addEventListener('input', function() {
               window.open(urlWhatsApp, "_blank");
             }
             </script>
+                <title>Mapa Interactivo</title>
+                <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -261,7 +264,25 @@ document.getElementById('contactForm').addEventListener('input', function() {
                             <!-- <div class="timeline-heading"> -->
                                 <h4 class="subheading">Nuestra veterinaria</h4>
                             <!-- </div> -->
-                            <div class="timeline-body"><p class="font">En San Miguel, contamos con una reconocida veterinaria que se dedica a brindar los mejores servicios para tus mascotas. Nuestro equipo de profesionales altamente capacitados está comprometido con el cuidado y bienestar de tus queridos compañeros peludos. Ofrecemos una amplia gama de servicios médicos, desde consultas de rutina hasta cirugías especializadas, y contamos con instalaciones modernas y equipadas con tecnología de vanguardia. Además, nuestro enfoque cálido y amoroso garantiza que tus mascotas se sientan cómodas y seguras durante su visita. Confía en nosotros para el cuidado integral de tus adorables amigos de cuatro patas.</p></div>
+                            <div class="timeline-body"><p class="font">En San Telmo, contamos con una reconocida veterinaria que se dedica a brindar los mejores servicios para tus mascotas. Nuestro equipo de profesionales altamente capacitados está comprometido con el cuidado y bienestar de tus queridos compañeros peludos. Ofrecemos una amplia gama de servicios médicos, desde consultas de rutina hasta cirugías especializadas, y contamos con instalaciones modernas y equipadas con tecnología de vanguardia. Además, nuestro enfoque cálido y amoroso garantiza que tus mascotas se sientan cómodas y seguras durante su visita. Confía en nosotros para el cuidado integral de tus adorables amigos de cuatro patas.</p></div>
+                        </div>
+                        <div>
+                            <div id="map"></div>
+
+                            <script>
+                                // Crear un nuevo mapa
+                                var map = L.map('map').setView([-34.6184166, -58.3768251], 17);
+
+                                // Agregar el mapa base de OpenStreetMap
+                                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+                                maxZoom: 19
+                                }).addTo(map);
+
+                                // Agregar un marcador a la ubicación de la veterinaria
+                                var marker = L.marker([-34.6184166, -58.3768251]).addTo(map);
+                                marker.bindPopup('Veterinaria San Andrés').openPopup();
+                            </script>
                         </div>
                     </li>
                 </ul>

@@ -114,6 +114,18 @@ body {
   color: red;
 }
 
+#map {
+margin-left: 40px;
+height: 300px;
+width: 95%;
+}
+@media (max-width: 600px) {
+        #map {
+            margin-top: 40px;
+            width: 90%;}
+        }
+
+        
 @media (max-width: 528px) {
   .formu_msg {
     width: 210px;
