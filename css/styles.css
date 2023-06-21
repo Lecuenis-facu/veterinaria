@@ -114,6 +114,12 @@ body {
   color: red;
 }
 
+.uade{
+  height: 15%;
+  width: 15%;
+  margin-top: 0px;
+}
+
 #map {
 margin-left: 40px;
 height: 300px;
@@ -6825,6 +6831,7 @@ textarea.form-control-lg {
 }
 
 .link-dark {
+  margin-left: 60px;
   color: #212529 !important;
 }
 .link-dark:hover, .link-dark:focus {
