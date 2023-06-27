@@ -7,45 +7,44 @@
         <meta name="description" content="Clínica veterinaria San Andrés ofrece servicios de alta calidad para el cuidado de tus mascotas y cuenta con servicio de adopción">
         <meta name="author" content="Veterinaria San Andrés" />
         <title>Veterinaria San Andrés</title>
-        <!-- Favicon-->
+
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
+
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
+
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
+
         <link href="css/styles.css" rel="stylesheet" />
         <script>
 
 function enviarMensajeWhatsApp2(event) {
-  event.preventDefault(); // Evitar que se envíe el formulario de manera convencional
+  event.preventDefault();
 
-  // Obtener los valores de los campos del formulario
   var nombre = document.querySelector('#contactForm input[name="Nombre"]').value;
   var zona = document.querySelector('#contactForm input[name="Zona"]').value;
   var edad = document.querySelector('#contactForm input[name="Edad"]').value;
   var mensaje = document.querySelector('#contactForm textarea[name="Mensaje"]').value;
 
-  // Verificar si todos los campos están rellenados
+
   if (nombre !== '' && zona !== '' && edad !== '' && mensaje !== '') {
-    // Construir el enlace de WhatsApp con los datos del formulario
+
     var url = 'https://wa.me/+5491150500250?text=' + encodeURIComponent('Hola, soy ' + nombre + ' de ' + zona + ', tengo ' + edad + ' años. Mi mensaje es: ' + mensaje);
 
-    // Abrir el enlace en una nueva ventana o pestaña
+
     window.open(url);
 
-    // Mostrar el mensaje de éxito
+
     var successMessage = document.getElementById('submitSuccessMessage');
     successMessage.classList.remove('d-none');
   } else {
-    // Mostrar el mensaje de "Rellenar los formularios"
+
     var errorMessage = document.getElementById('submitErrorMessage');
     errorMessage.classList.remove('d-none');
   }
 }
 
-// Habilitar o deshabilitar el botón de enviar mensaje al modificar los campos del formulario
+
 document.getElementById('contactForm').addEventListener('input', function() {
   var nombre = document.querySelector('#contactForm input[name="Nombre"]').value;
   var zona = document.querySelector('#contactForm input[name="Zona"]').value;
@@ -53,7 +52,7 @@ document.getElementById('contactForm').addEventListener('input', function() {
   var mensaje = document.querySelector('#contactForm textarea[name="Mensaje"]').value;
   var submitButton = document.querySelector('#contactForm button[name="submit"]');
 
-  // Habilitar o deshabilitar el botón de enviar mensaje según el estado del formulario
+
   if (nombre !== '' && zona !== '' && edad !== '' && mensaje !== '') {
     submitButton.classList.remove('disabled');
   } else {
@@ -79,17 +78,17 @@ document.getElementById('contactForm').addEventListener('input', function() {
 
 
             function enviarMensajeWhatsApp(event, formularioId) {
-              event.preventDefault(); // Evitar el envío del formulario por defecto
+              event.preventDefault();
               var nombre = document.getElementById(formularioId).Nombre.value;
               var mensaje = document.getElementById(formularioId).Mensaje.value;
               var zona = document.getElementById(formularioId).Zona.value;
-              // Codificar los caracteres especiales en la URL
+             
               var nombreCodificado = encodeURIComponent(nombre);
               var mensajeCodificado = encodeURIComponent(mensaje);
               var zonaCodificado = encodeURIComponent(zona);
-              // Construir la URL del enlace de WhatsApp
+
               var urlWhatsApp = "https://wa.me/+5491150500250?text=" + "%20Hola!%20soy%20" + nombreCodificado + "%20de%20" + zonaCodificado + "%20" + mensajeCodificado;
-              // Abrir la ventana de WhatsApp en una nueva pestaña
+
               window.open(urlWhatsApp, "_blank");
             }
             </script>
@@ -98,7 +97,7 @@ document.getElementById('contactForm').addEventListener('input', function() {
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
     </head>
     <body id="page-top">
-        <!-- Navigation-->
+
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.png" alt="..." /></a>
@@ -116,7 +115,7 @@ document.getElementById('contactForm').addEventListener('input', function() {
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
+
         <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">Bienvenido!</div>
@@ -124,7 +123,7 @@ document.getElementById('contactForm').addEventListener('input', function() {
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Cuentame más</a>
             </div>
         </header>
-        <!-- Services-->
+
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
@@ -150,7 +149,7 @@ document.getElementById('contactForm').addEventListener('input', function() {
                 </div>
             </div>
         </section>
-        <!-- Portfolio Grid-->
+
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
@@ -159,7 +158,7 @@ document.getElementById('contactForm').addEventListener('input', function() {
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 1-->
+
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
                                 <div class="portfolio-hover">
@@ -174,7 +173,7 @@ document.getElementById('contactForm').addEventListener('input', function() {
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 2-->
+
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
                                 <div class="portfolio-hover">
@@ -189,7 +188,7 @@ document.getElementById('contactForm').addEventListener('input', function() {
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 3-->
+
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
                                 <div class="portfolio-hover">
@@ -204,7 +203,7 @@ document.getElementById('contactForm').addEventListener('input', function() {
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <!-- Portfolio item 4-->
+
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
                                 <div class="portfolio-hover">
@@ -219,7 +218,7 @@ document.getElementById('contactForm').addEventListener('input', function() {
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <!-- Portfolio item 5-->
+
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
                                 <div class="portfolio-hover">
@@ -234,7 +233,7 @@ document.getElementById('contactForm').addEventListener('input', function() {
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <!-- Portfolio item 6-->
+
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
                                 <div class="portfolio-hover">
@@ -251,7 +250,7 @@ document.getElementById('contactForm').addEventListener('input', function() {
                 </div>
             </div>
         </section>
-        <!-- About-->
+
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
@@ -262,25 +261,24 @@ document.getElementById('contactForm').addEventListener('input', function() {
                     <li>
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/cuidados-almohadillas.jpg" alt="..." /></div>
                         <div class="timeline-panel">
-                            <!-- <div class="timeline-heading"> -->
+
                                 <h4 class="subheading">Nuestra veterinaria</h4>
-                            <!-- </div> -->
+
                             <div class="timeline-body"><p class="font">En San Telmo, contamos con una reconocida veterinaria que se dedica a brindar los mejores servicios para tus mascotas. Nuestro equipo de profesionales altamente capacitados está comprometido con el cuidado y bienestar de tus queridos compañeros peludos. Ofrecemos una amplia gama de servicios médicos, desde consultas de rutina hasta cirugías especializadas, y contamos con instalaciones modernas y equipadas con tecnología de vanguardia. Además, nuestro enfoque cálido y amoroso garantiza que tus mascotas se sientan cómodas y seguras durante su visita. Confía en nosotros para el cuidado integral de tus adorables amigos de cuatro patas.</p></div>
                         </div>
                         <div>
                             <div id="map"></div>
 
                             <script>
-                                // Crear un nuevo mapa
+
                                 var map = L.map('map').setView([-34.6184166, -58.3768251], 17);
 
-                                // Agregar el mapa base de OpenStreetMap
                                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
                                 maxZoom: 19
                                 }).addTo(map);
 
-                                // Agregar un marcador a la ubicación de la veterinaria
+
                                 var marker = L.marker([-34.6184166, -58.3768251]).addTo(map);
                                 marker.bindPopup('Veterinaria San Andrés').openPopup();
                             </script>
